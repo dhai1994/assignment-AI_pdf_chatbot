@@ -1,0 +1,26 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Database
+db.sqlite3
+
+# Media uploads
+media/
+
+# ChromaDB
+chroma_db/
+
+# React
+frontend/node_modules/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# Build files
+dist/
+build/
