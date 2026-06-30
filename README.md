@@ -93,6 +93,7 @@ Instead of searching every uploaded PDF, users can decide exactly which document
 - Deselect PDFs to exclude them
 - Search selected documents only
 - Ignore unrelated documents
+- Streaming Responses
 
 ### Example
 
@@ -168,6 +169,7 @@ Interact with documents completely hands-free.
 - 🔊 AI Voice Responses
 - 🗣️ Text-to-Speech output
 - 🤖 Hands-free document interaction
+  
 
 ---
 
@@ -181,6 +183,7 @@ Every conversation is stored automatically.
 - Previous chat access
 - Full question & answer history
 - User-specific sessions
+-  Streaming Responses
 
 ---
 
@@ -298,7 +301,6 @@ Authentication           PDF Processing
 - OCR Support for Scanned PDFs
 - Image Understanding
 - Table Extraction
-- Streaming Responses
 - Citation Generation
 - Cross Encoder Reranking
 - Agentic RAG
