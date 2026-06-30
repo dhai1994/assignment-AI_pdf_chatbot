@@ -16,6 +16,7 @@ export default function Login() {
     setLoading(true);
     setError("");
     try {
+      console.log(form);
       const res = await API.post("/login/", form);
       login(res.data.access, { username: form.username });
       navigate("/dashboard");
@@ -139,11 +140,11 @@ export default function Login() {
               fontWeight: 500,
               marginBottom: 10,
             }}>
-              Email
+              Username
             </label>
             <input
               type="text"
-              placeholder="designer@email.com"
+              placeholder="Enter username"
               value={form.username}
               onChange={e => setForm(f => ({ ...f, username: e.target.value }))}
               onKeyDown={e => e.key === "Enter" && handleSubmit()}

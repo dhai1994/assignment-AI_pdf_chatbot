@@ -8,7 +8,9 @@ def ask_question(question, user_id, pdf_ids=None):
     """
     try:
         # Initialize embeddings
-        embedding_model = OllamaEmbeddings(model="nomic-embed-text")
+        embedding_model = OllamaEmbeddings(
+        model="deepseek-coder:6.7b"
+        )
         
         # Load ChromaDB
         vector_db = Chroma(
@@ -80,7 +82,10 @@ Question: {question}
 Provide a clear and detailed answer:"""
         
         # Generate answer using Ollama Phi-3
-        llm = ChatOllama(model="phi3", temperature=0.3)
+        llm = ChatOllama(
+        model="phi3.5:latest",
+        temperature=0.3
+        )
         response = llm.invoke(prompt)
         
         return response.content

@@ -50,20 +50,27 @@ def register_user(request):
 # -----------------------------------
 @api_view(['POST'])
 def login_user(request):
-    username = request.data.get('username')
-    password = request.data.get('password')
+    print("Request:", request.data)
+
+    username = request.data.get("username")
+    password = request.data.get("password")
+
+    print("Username:", username)
+    print("Password:", password)
 
     user = authenticate(
         username=username,
         password=password
     )
 
+    print("Authenticated user:", user)
+
     if user is not None:
         refresh = RefreshToken.for_user(user)
 
         return Response({
-            'refresh': str(refresh),
-            'access': str(refresh.access_token),
+            "refresh": str(refresh),
+            "access": str(refresh.access_token),
         })
 
     return Response({

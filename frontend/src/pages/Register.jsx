@@ -4,7 +4,7 @@ import API from "../services/api";
 import bgImage from "../assets/main.png";
 
 export default function Register() {
-  const [form, setForm] = useState({ username: "", password: "", confirmPassword: "" });
+  const [form, setForm] = useState({ username: "",email: "", password: "", confirmPassword: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -24,8 +24,9 @@ export default function Register() {
     setError("");
     try {
       await API.post("/register/", {
-        username: form.username,
-        password: form.password,
+          username: form.username,
+          email: form.email,
+          password: form.password,
       });
       navigate("/login");
     } catch (err) {
@@ -204,6 +205,53 @@ export default function Register() {
               }}
             />
           </div>
+          {/* Email Field */}
+<div style={{ marginBottom: 24 }}>
+  <label
+    style={{
+      display: "block",
+      color: "#999",
+      fontSize: 13,
+      fontWeight: 500,
+      marginBottom: 10,
+    }}
+  >
+    Email
+  </label>
+
+  <input
+    type="email"
+    placeholder="Enter your email"
+    value={form.email}
+    onChange={(e) =>
+      setForm((f) => ({
+        ...f,
+        email: e.target.value,
+      }))
+    }
+    style={{
+      width: "100%",
+      padding: "16px 18px",
+      background: "#000",
+      border: "1px solid #1a1a1a",
+      borderRadius: 14,
+      color: "#e5e5e5",
+      fontSize: 15,
+      outline: "none",
+      boxSizing: "border-box",
+      transition: "all 0.2s",
+      fontFamily: "'Inter', sans-serif",
+    }}
+    onFocus={(e) => {
+      e.target.style.borderColor = "#20b8cd";
+      e.target.style.boxShadow = "0 0 0 4px rgba(32,184,205,0.1)";
+    }}
+    onBlur={(e) => {
+      e.target.style.borderColor = "#1a1a1a";
+      e.target.style.boxShadow = "none";
+    }}
+  />
+</div>
 
           {/* Password Field */}
           <div style={{ marginBottom: 24 }}>

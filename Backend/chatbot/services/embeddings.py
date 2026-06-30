@@ -1,7 +1,9 @@
 from langchain_community.vectorstores import Chroma
 from langchain_ollama import OllamaEmbeddings
 
-embedding_model = OllamaEmbeddings(model="nomic-embed-text")
+embedding_model = OllamaEmbeddings(
+    model="deepseek-coder:6.7b"
+)
 
 
 def store_in_chroma(chunks, user_id, document_id):

@@ -2,5 +2,6 @@ from langchain_ollama import OllamaLLM
 
 
 llm = OllamaLLM(
-    model="phi3:mini"
+    model="qwen3.5:9b",
+    temperature=0.3
 )
